@@ -1,0 +1,1 @@
+export {InfinityText} from './infinity-text.tsx'
