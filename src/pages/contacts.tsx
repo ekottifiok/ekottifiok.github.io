@@ -14,7 +14,7 @@ export function Contacts({upMd}: Parameters): ReactNode {
           {ContactData.map((item) => (
             <Stack direction='row' gap={3} key={item.key} sx={{alignItems: 'center'}}>
               {item.icon}
-              <Link href={item.link} underline='none'>
+              <Link href={item.link} rel="noopener noreferrer" target="_blank" underline='none'>
                 <Typography sx={{color: 'white', fontSize: '20px', lineHeight: '1.5rem'}}>
                   {item.content}
                 </Typography>

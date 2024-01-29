@@ -6,18 +6,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import XIcon from '@mui/icons-material/X';
+import type {ProjectsDataInterface} from "@components/interface";
+import {ProgrammingStackEnum, ProjectsDevices} from "@components/interface";
 
-export const testTexts = [
-  "I am writing to you because I want a job.",
-  "I am the best candidate for this job.",
-  "In my grand adventure as a seasoned designer...",
-  "Knock knock! Who's there? Your new employee!",
-  "Walking the tightrope balance of project management...",
-  "I find myself compelled to express my interest due to...",
-  "My pen (or should I say, keyboard) is at work today because...",
-  "Inspired by the alluring challenge in the job posting, I am writing...",
-  "Stirred to my keyboard by the tantalising nature of the role…"
-];
 
 export const whatIDo = [
   'Application Developer',
@@ -28,16 +19,53 @@ export const whatIDo = [
 ];
 
 export const IntroButtons = [
-  {key: 1, icon: <PersonOutlinedIcon />, content: 'About Me', link: '#about'},
-  {key: 2, icon: <WorkOutlineIcon />, content: 'Portfolio', link: '#portfolio'},
-  {key: 3, icon: <EmojiFlagsIcon />, content: 'Projects', link: '#projects'},
-  {key: 4, icon: <MailOutlinedIcon />, content: 'Contacts', link: '#contacts'},
+  {key: 1, icon: <PersonOutlinedIcon/>, content: 'About Me', link: '#about'},
+  {key: 2, icon: <WorkOutlineIcon/>, content: 'Portfolio', link: '#portfolio'},
+  {key: 3, icon: <EmojiFlagsIcon/>, content: 'Projects', link: '#projects'},
+  {key: 4, icon: <MailOutlinedIcon/>, content: 'Contacts', link: '#contacts'},
 ]
 
 export const ContactData = [
-  {key: 1, icon: <EmailIcon fontSize='large' />, content: 'ekottifiok@gmail.com', link: 'mailto:ekottifiok@gmail.com'},
-  {key: 2, icon: <LinkedInIcon fontSize='large' />, content: 'ekottifiok', link: 'https://github.com/ekottifiok'},
-  {key: 3, icon: <GitHubIcon fontSize='large' />, content: 'ekottifiok', link: 'https://www.linkedin.com/in/ekottifiok/'},
-  {key: 4, icon: <XIcon fontSize='large' />, content: 'Ifiok Ekott', link: 'https://twitter.com/IfiokEkott'},
+  {key: 1, icon: <EmailIcon fontSize='large'/>, content: 'ekottifiok@gmail.com', link: 'mailto:ekottifiok@gmail.com'},
+  {key: 2, icon: <LinkedInIcon fontSize='large'/>, content: 'ekottifiok', link: 'https://www.linkedin.com/in/ekottifiok/'},
+  {key: 3, icon: <GitHubIcon fontSize='large'/>, content: 'ekottifiok', link:  'https://github.com/ekottifiok'},
+  {key: 4, icon: <XIcon fontSize='large'/>, content: 'Ifiok Ekott', link: 'https://twitter.com/IfiokEkott'},
+]
 
+const allDevices = [
+  {device: ProjectsDevices.Android, id: 1},
+  {device: ProjectsDevices.Ios, id: 2},
+  {device: ProjectsDevices.Linux, id: 3},
+  {device: ProjectsDevices.MacOS, id: 4},
+  {device: ProjectsDevices.Windows, id: 5}
+]
+
+export const ProgrammingStack: Record<ProgrammingStackEnum, { image: string, link: string }> = {
+  [ProgrammingStackEnum.CSharp]: {image: 'language_logo/csharp.svg', link: 'https://learn.microsoft.com/en-us/dotnet/csharp/'},
+  [ProgrammingStackEnum.Dart]: {image: 'language_logo/dart.png', link: 'https://dart.dev'},
+  [ProgrammingStackEnum.Flutter]: {image: 'language_logo/flutter.png', link: 'https://flutter.dev'},
+};
+
+export const ProjectsData: ProjectsDataInterface[] = [
+  {
+    key: 1,
+    logo: 'projects_logo/localsend.png',
+    title: 'LocalSend',
+    devices: allDevices,
+    subHeader: "Sending files over WiFi",
+    stack: [
+      {language: ProgrammingStackEnum.Dart, key: 1},
+      {language: ProgrammingStackEnum.Flutter, key: 2}
+    ]
+  },
+  {
+    key: 2,
+    logo: 'projects_logo/bunny_communication.png',
+    title: 'Bunny Communication',
+    devices: [{device: ProjectsDevices.Windows, id: 1}],
+    subHeader: "A WhatsApp clone for LAN communication",
+    stack: [
+      {language: ProgrammingStackEnum.CSharp, key: 1},
+    ]
+  }
 ]
